@@ -1,5 +1,4 @@
-# Chapter 2
-Introduction to the C Language
+# Chapter 2 Introduction to the C Language
 
 ## Contents
 1. [Preliminaries](#1-preliminaries)
