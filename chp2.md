@@ -1,13 +1,13 @@
-#Chapter 2
+# Chapter 2
 Introduction to the C Language
 
-##Contents
+## Contents
 1. [Preliminaries](#1-preliminaries)
 2. [Formatting](#2-formatting)
 3. [Void](#3-void)
 4. [Void](#4-void)
 
-##1. Preliminaries
+## 1. Preliminaries
 1) Identifier: Identifier is a name we give to each variables.
 c.f. Start with english or underscore(_; usually for system variables); Use only english, numbers and under score
 
@@ -34,9 +34,9 @@ i.e. Literal Constant: Non-named constants. This is generated if we just type a 
      Defined Constant: The constant that does not varies alond the program; Defined before the main function starts.
      Memory Constant: The constant that does not varies alond the program; Defined after the main function.
 
-##2. Formatting
-###Output Formatting
-####Printf
+## 2. Formatting
+### Output Formatting
+#### Printf
 This is a function to print out the formatted variables.
 
 > printf("...%d...%f...", int var, float var)
@@ -47,6 +47,6 @@ c.f.Can be
 
 c.f. Caution
 
-###Input Formatting
-####Scanf
+### Input Formatting
+#### Scanf
 
