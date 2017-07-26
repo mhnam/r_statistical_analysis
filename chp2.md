@@ -20,14 +20,15 @@ c.f. Boolean: gets only two values-0,1 which represents true and false.
      Floating-Point: gets floating numbers and this varies from real, imaginary and complex number.
 
 3) Variables and Constants: Variables are the space that gets value, while constant is the number that does not varies along the program.
-e.g.
-> const float pi=3.141592 //constants
-> bool fact;
-> short maxItems;
-> longlong national_debt;
-> float payRate=0; //variable initialization
-> char code, kind;
-> int a, b;
+```c
+const float pi=3.141592 //constants
+bool fact;
+short maxItems;
+longlong national_debt;
+float payRate=0; //variable initialization
+char code, kind;
+int a, b;
+```
 
 4) Others: There are three more things to note-Literal Constants, Defined Constants, Memory Contstants.
 i.e. Literal Constant: Non-named constants. This is generated if we just type a number.
@@ -39,7 +40,9 @@ i.e. Literal Constant: Non-named constants. This is generated if we just type a 
 #### Printf
 This is a function to print out the formatted variables.
 
-> printf("...%d...%f...", int var, float var)
+```c
+printf("...%d...%f...", int var, float var)
+```
 
 c.f. Can be aligned 
 
