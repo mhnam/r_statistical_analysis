@@ -75,7 +75,7 @@ const float Pi=3.141592;
 This is a function to print out the formatted variables.
 
 ```c
-printf("...%d...%f...", int var, float var)
+printf("...%d...%f...", int var, float var);
 ```
 
 c.f. 
@@ -95,10 +95,10 @@ printf("|%5.3f|", 3.1); \\if the space is less than decimal, the space number wo
 ```
 - Following examples are wrong:
 ```c
-printf("%d %d %d\n", 44, 55) \\would appear as 44, 55, 134513316 because the last format is not determined
-printf("%d %d\n", 44, 55, 66) \\would appear as 44, 55 because the last format is not assigned
-float x=123.45
-printf("%d", x) \\would appear as -1073741824 because x is not decimal number(integer)
+printf("%d %d %d\n", 44, 55); \\would appear as 44, 55, 134513316 because the last format is not determined
+printf("%d %d\n", 44, 55, 66); \\would appear as 44, 55 because the last format is not assigned
+float x=123.45;
+printf("%d", x); \\would appear as -1073741824 because x is not decimal number(integer)
 ```
 
 ### Input Formatting
@@ -106,15 +106,15 @@ printf("%d", x) \\would appear as -1073741824 because x is not decimal number(in
 This is a function to get the values from user to the formatted variables.
 
 ```c
-scanf("%d %f", &int var, &float var) \\& represent the address of the variable
+scanf("%d %f", &int var, &float var); \\& represent the address of the variable
 ```
 
 c.f. 
 
 - The format inside the quotation mark "~" must be followed
 ```c
-scanf("%d %d %d", &day, &month, &year) \\the input should be feeded as '28 7 2017'
-scanf("%d-%d-%d"), %day, %month, &year) \\the input should be feeded as '28-7-2017'
+scanf("%d %d %d", &day, &month, &year); \\the input should be feeded as '28 7 2017'
+scanf("%d-%d-%d"), %day, %month, &year); \\the input should be feeded as '28-7-2017'
 ```
 
 ## 3. Practice
