@@ -9,7 +9,7 @@
 ### Identifier
 **Identifier** is a name we give to each variables.
 
-c.f.
+_c.f._
 - Start with english or underscore(_; usually for system variables)
 - Use only english, numbers and under score
 - Can be consist maximum 63 characters
@@ -18,7 +18,7 @@ c.f.
 ### Types
 **Type** is a set of values and a set of operations that can be applied on those values.
 
-i.e. There are mainly four types.
+_i.e._ There are mainly four types.
 
 - void: literally _empty_ type, meaning _undefined_.
 - integral
@@ -75,6 +75,17 @@ const float Pi=3.141592;
 
 
 ## 2. Formatting
+### Formats
+Formats | Comments
+------- | --------
+%d, %i | decimals
+%x | hexadecimals
+%o | octal
+%f | float
+%lf | long float
+%c | character
+%s | strings
+
 ### Output Formatting
 #### Printf
 This is a function to print out the formatted variables.
