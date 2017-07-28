@@ -53,7 +53,7 @@ i.e. There are three types of constant
 - Literal Constant: Non-named constants. This is generated if we just type a number.
 
 ```c
-a=b*5; \\5 is literal constant
+a=b*5; //5 is literal constant
 ```
 
 - Defined Constant: The constant that does not varies alond the program; Defined before the main function starts.
