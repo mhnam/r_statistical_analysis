@@ -2,7 +2,7 @@
 
 ## Contents
 1. [More types](#1-more-types)
-2. [Expression](#2-expression)
+2. [Expressions](#2-expressions)
 3. [Precedence and Associativity](#3-precedence-and-associativity)
 4. [Type Conversion](#4-type-conversion)
 5. [Statements](#5-statements)
@@ -31,7 +31,7 @@ This can be converted 3 bits of positive binary number. (_i.e._ 1111 > 1 / 111 >
 0x12FF /* 1*16^3+2*16^2+15*16^1+15*16^0=4096+512+240+15=4863 */, 0x56ABC, 0x89A345
 ```
 
-## 2. Expression
+## 2. Expressions
 
 Expression is a statement consist of variables, constants and operators.
 
