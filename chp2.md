@@ -82,23 +82,23 @@ c.f.
 
 - Can be aligned by assigning the space for format
 ```c
-printf("|%5d|",30); \\30 will appear as | _ _ _ 3 0 |
-printf("|%+5d|",30); \\30 will appear as | _ _ + 3 0 |
+printf("|%5d|",30); //30 will appear as | _ _ _ 3 0 |
+printf("|%+5d|",30); //30 will appear as | _ _ + 3 0 |
 ```
 - Printing format can be determined, i.e. how many decimals to presents
 ```c
-printf("|%f|"3.1); \\3.1 will appear as |3.100000|, i.e. six decimals are default
-printf("|%10f|",3.1); \\3.1 will appear as |_ _ 3.100000|, i.e. right alignment is default
-printf("|%10.5f|",3.1); \\3.1 will appear as |_ _ _ 3.10000|
-printf("|%-10.5f|", 3.1); \\3.1 will appear as |3.10000 _ _ _|, i.e. alignment can be changed by putting '-' sign
-printf("|%5.3f|", 3.1); \\if the space is less than decimal, the space number would be ignored; |3.100|
+printf("|%f|"3.1); //3.1 will appear as |3.100000|, i.e. six decimals are default
+printf("|%10f|",3.1); //3.1 will appear as |_ _ 3.100000|, i.e. right alignment is default
+printf("|%10.5f|",3.1); //3.1 will appear as |_ _ _ 3.10000|
+printf("|%-10.5f|", 3.1); //3.1 will appear as |3.10000 _ _ _|, i.e. alignment can be changed by putting '-' sign
+printf("|%5.3f|", 3.1); //if the space is less than decimal, the space number would be ignored; |3.100|
 ```
 - Following examples are wrong:
 ```c
-printf("%d %d %d\n", 44, 55); \\would appear as 44, 55, 134513316 because the last format is not determined
-printf("%d %d\n", 44, 55, 66); \\would appear as 44, 55 because the last format is not assigned
+printf("%d %d %d\n", 44, 55); //would appear as 44, 55, 134513316 because the last format is not determined
+printf("%d %d\n", 44, 55, 66); //would appear as 44, 55 because the last format is not assigned
 float x=123.45;
-printf("%d", x); \\would appear as -1073741824 because x is not decimal number(integer)
+printf("%d", x); //would appear as -1073741824 because x is not decimal number(integer)
 ```
 
 ### Input Formatting
@@ -106,15 +106,15 @@ printf("%d", x); \\would appear as -1073741824 because x is not decimal number(i
 This is a function to get the values from user to the formatted variables.
 
 ```c
-scanf("%d %f", &int var, &float var); \\& represent the address of the variable
+scanf("%d %f", &int var, &float var); //& represent the address of the variable
 ```
 
 c.f. 
 
 - The format inside the quotation mark "~" must be followed
 ```c
-scanf("%d %d %d", &day, &month, &year); \\the input should be feeded as '28 7 2017'
-scanf("%d-%d-%d", %day, %month, &year); \\the input should be feeded as '28-7-2017'
+scanf("%d %d %d", &day, &month, &year); //the input should be feeded as '28 7 2017'
+scanf("%d-%d-%d", %day, %month, &year); //the input should be feeded as '28-7-2017'
 ```
 
 ## 3. Practice
