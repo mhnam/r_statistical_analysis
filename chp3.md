@@ -57,14 +57,14 @@ a
 ```
 
 ### Postfix Expression
-**Postfix Expression** is a expression that operator comes before operand. Calculation comes first before variable reference.
+**Postfix Expression** is a expression that operator comes before operand. Calculation comes first before variable is refered.
 
 ```c
 x= ++a // increase a as 'a=a+1' then give the value to the variable x
 ```
 
 ### Prefix Expression
-**Prefix Expression** is a expression that operator comes after operand. Reference goes first before calculation
+**Prefix Expression** is a expression that operator comes after operand. The variable is refered before calculation
 
 ```c
 x= a++ // give the value to the variable x then increase a as 'a=a+1'
