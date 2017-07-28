@@ -2,9 +2,11 @@
 
 ## Contents
 1. [More types](#1-more-types)
-2. [Expression](#2-formatting)
-3. [Precedence and Associativity] (#3-precedence-and-associativity)
-4. [Practice](#3-practice)
+2. [Expression](#2-expression)
+3. [Precedence and Associativity](#3-precedence-and-associativity)
+4. [Type Conversion](#4-type-conversion)
+5. [Statements](#5-statements)
+6. [Practice](#6-practice)
 
 ## 1. More types
 ### Decimal Integer
@@ -16,7 +18,7 @@
 
 ### Octal Integer
 **Octal Integer** is a number bases that start with '0' which number varies from 0 to 7 rather 0 to 9 in decimal integer.
-This can be converted 3 bits of binary number. (i.e. 1111 > 1 / 111 > 1 / 7 > 017)
+This can be converted 3 bits of binary number. (_i.e._ 1111 > 1 / 111 > 1 / 7 > 017)
 
 ```c
 017 /* 1*8^1+7*8^0=15 */, 05643, 0234
@@ -24,7 +26,7 @@ This can be converted 3 bits of binary number. (i.e. 1111 > 1 / 111 > 1 / 7 > 01
 
 ### Hexadecimal Integer
 **Hexadecimal Integer** is a number base that starts with '0x' which number varies from 0 to F (i.e. 0~9 and A, B, C, D, E, F)
-This can be converted 4 bits of binary number. (i.e. 11111 > 1 / 1111 > 1 / 15 > 1 / F > 0x1F)
+This can be converted 4 bits of binary number. (_i.e._ 11111 > 1 / 1111 > 1 / 15 > 1 / F > 0x1F)
 
 ```c
 0x12FF /* 1*16^3+2*16^2+15*16^1+15*16^0=4096+512+240+15=4863 */, 0x56ABC, 0x89A345
@@ -105,7 +107,7 @@ int main()
 
 Then the result would appear as 11, 10, 9, 10 while x would be always 10 regardless of stages.
 
-> Note that prefix and postfix operator would give the expression much shorter and faster
+**_Note that prefix and postfix operator would give the expression much shorter and faster_**
 
 ### Unary Expression
 
@@ -165,7 +167,7 @@ a=(double)a; //a would be considered as 7.000000 from here
 ### Implicit Type Conversion
 Variable is converted by the compiler automatically during operation followed by the type of assigned variable.
 
-c.f. the rank of the conversion
+_c.f._ the rank of the conversion
 
 bool > char > short > int > long > long long > float > double > long double
 
@@ -180,20 +182,43 @@ result1=b*a; //'a' would be converted into float (7.000000) to be calculated wit
 result2=b*a //'a' would be converted into float (7.000000) to be calculated with 'b'; then a*b would be converted from float to integer to assigned into 'result2' because the type of result is smaller than float then the decimals below 10^(-1) would be lost with its precision
 ```
 
-## 5.Practice
+### NOTE
+To check a size of each type can be checked from '_sizeof()_' function, and it can be used as follow:
+
+```c
+printf("size of character: %d", sizeof(char))
+printf("size of integer: %d", sizeof(int))
+printf("size of float: %d", sizeof(float))
+```
+
+## 5. Statements
+**Statement** is an action that occurs in a program.
+
+_c.f._
+
+- Null: Statement that none of the action is needed; _e.g._ for(;;)
+- Expression: Statement that written action is required; _i.e._ end with ;
+- Return: Statement that returns a value to the function; _e.g._ return 0;
+- Compound: Statement that ';' is not used; _e.g._ main()
+- Conditional: for, if, else, while
+- Labeled
+- Switch
+- Iterative
+- Break: Used to get out from the loop
+- Continue: Used when following stage is unnecessary
+- Goto
+
+
+## 6. Practice
 ```c
 #include <stdio.h>
-#include<stdlib.h>
 
 int main()
 {
-     int year, month, day;
+     printf("size of character: %d", sizeof(char));
+     printf("size of integer: %d", sizeof(int));
+     printf("size of float: %d", sizeof(float));
      
-     printf("\nPlease enter the date as day-month-year format:");
-     scanf("%d-%d-%d", &day, %month, &year);
-     printf("\t The date is %d-%d-%d", day, month, year);
-     
-     system("PAUSE");
      return 0;  
 }
 ```
