@@ -10,14 +10,14 @@
 
 ## 1. More types
 ### Decimal Integer
-**Decimal Integer** is a default number bases that we have used in the previous chapter.
+**Decimal Integer**(%d) is a default number bases that we have used in the previous chapter.
 
 ```c
 0, 237, 18567, -789
 ```
 
 ### Octal Integer
-**Octal Integer** is a number bases that start with '0' which number varies from 0 to 7 rather 0 to 9 in decimal integer.
+**Octal Integer**(%o) is a number bases that start with '0' which number varies from 0 to 7 rather 0 to 9 in decimal integer.
 This can be converted 3 bits of binary number. (_i.e._ 1111 > 1 / 111 > 1 / 7 > 017)
 
 ```c
@@ -25,7 +25,7 @@ This can be converted 3 bits of binary number. (_i.e._ 1111 > 1 / 111 > 1 / 7 > 
 ```
 
 ### Hexadecimal Integer
-**Hexadecimal Integer** is a number base that starts with '0x' which number varies from 0 to F (i.e. 0~9 and A, B, C, D, E, F)
+**Hexadecimal Integer**(%x) is a number base that starts with '0x' which number varies from 0 to F (i.e. 0~9 and A, B, C, D, E, F)
 This can be converted 4 bits of binary number. (_i.e._ 11111 > 1 / 1111 > 1 / 15 > 1 / F > 0x1F)
 
 ```c
