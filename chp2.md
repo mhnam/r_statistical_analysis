@@ -104,4 +104,36 @@ printf("%d", x) \\would appear as -1073741824 because x is not decimal number(in
 
 ### Input Formatting
 #### Scanf
+This is a function to get the values from user to the formatted variables.
+
+```c
+scanf("%d %f", &int var, &float var) \\& represent the address of the variable
+```
+
+c.f. 
+
+- The format inside the quotation mark "~" must be followed
+```c
+scanf("%d %d %d", &day, &month, &year) \\the input should be feeded as '28 7 2017'
+scanf("%d-%d-%d"), %day, %month, &year) \\the input should be feedes as '28-7-2017'
+```
+
+>Practice
+>```c
+#include <stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+     int year, month, day;
+     
+     printf("\nPlease enter the date as day-month-year format:");
+     scanf("%d-%d-%d", &day, %month, &year);
+     printf("\t The date is %d-%d-%d", day, month, year);
+     
+     system("PAUSE");
+     return 0;  
+}
+```
+
 
