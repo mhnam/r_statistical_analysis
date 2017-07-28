@@ -79,6 +79,7 @@ const float Pi=3.141592;
 Formats | Comments
 ------- | --------
 %d, %i | decimals
+%u | more large decimals (only positive numbers)
 %x | hexadecimals
 %o | octal
 %f | float
@@ -100,6 +101,7 @@ c.f.
 ```c
 printf("|%5d|",30); //30 will appear as | _ _ _ 3 0 |
 printf("|%+5d|",30); //30 will appear as | _ _ + 3 0 |
+pritnf("|%03d|",30); //30 will appear as |00030|
 ```
 - Printing format can be determined, i.e. how many decimals to presents
 ```c
