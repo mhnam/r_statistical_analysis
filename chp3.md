@@ -9,25 +9,25 @@
 ### Decimal Integer
 **Decimal Integer** is a default number bases that we have used in the previous chapter.
 
-e.g. 
-
+```c
 0, 237, 18567, -789
+```
 
 ### Octal Integer
 **Octal Integer** is a number bases that start with '0' which number varies from 0 to 7 rather 0 to 9 in decimal integer.
 This can be converted 3 bits of binary number. (i.e. 1111 > 1 / 111 > 1 / 7 > 017)
 
-e.g. 
-
-017(1*8^1+7*8^0=15), 05643, 0234
+```c
+017 /*1*8^1+7*8^0=15*/, 05643, 0234
+```
 
 ### Hexadecimal Integer
 **Hexadecimal Integer** is a number base that starts with '0x' which number varies from 0 to F (i.e. 0~9 and A, B, C, D, E, F)
 This can be converted 4 bits of binary number. (i.e. 11111 > 1 / 1111 > 1 / 15 > 1 / F > 0x1F)
 
-e.g. 
-
-0x12FF(1*16^3+2*16^2+15*16^1+15*16^0=4096+512+240+15=4863), 0x56ABC, 0x89A345
+```c
+0x12FF /* 1*16^3+2*16^2+15*16^1+15*16^0=4096+512+240+15=4863 */, 0x56ABC, 0x89A345
+```
 
 ## 2. Expression
 
