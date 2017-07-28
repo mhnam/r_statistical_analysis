@@ -30,6 +30,11 @@ i.e. There are mainly four types.
      - imaginary
      - complex
 - derived
+     - pointer
+     - enumerated type
+     - union
+     - array
+     - structure
 
 ### Variables and Constants
 
