@@ -10,8 +10,9 @@
 **Identifier** is a name we give to each variables.
 
 _c.f._
-- Start with english or underscore(_; usually for system variables)
+- Start with english or underscore( _ ; usually for system variables)
 - Use only english, numbers and under score
+- Upper and lower case are different 
 - Can be consist maximum 63 characters
 - Can not use _keywords_ such as double, int, switch, if, else, return, static etc.
 
@@ -85,10 +86,9 @@ Formats | Comments
 %f | float
 %lf | double
 %c | character
-%s | strings
+%s | strings (when input is feeded with ")
 
-### Output Formatting
-#### Printf
+### Output Formatting: Printf
 This is a function to print out the formatted variables.
 
 ```c
@@ -119,8 +119,7 @@ float x=123.45;
 printf("%d", x); //would appear as -1073741824 because x is not decimal number(integer)
 ```
 
-### Input Formatting
-#### Scanf
+### Input Formatting: Scanf
 This is a function to get the values from user to the formatted variables.
 
 ```c
