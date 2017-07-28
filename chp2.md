@@ -82,7 +82,7 @@ Formats | Comments
 %x | hexadecimals
 %o | octal
 %f | float
-%lf | long float
+%lf | double
 %c | character
 %s | strings
 
