@@ -114,7 +114,7 @@ c.f.
 - The format inside the quotation mark "~" must be followed
 ```c
 scanf("%d %d %d", &day, &month, &year); \\the input should be feeded as '28 7 2017'
-scanf("%d-%d-%d"), %day, %month, &year); \\the input should be feeded as '28-7-2017'
+scanf("%d-%d-%d", %day, %month, &year); \\the input should be feeded as '28-7-2017'
 ```
 
 ## 3. Practice
