@@ -3,8 +3,7 @@
 ## Contents
 1. [Preliminaries](#1-preliminaries)
 2. [Formatting](#2-formatting)
-3. [Void](#3-void)
-4. [Void](#4-void)
+3. [Practice](#3-practice)
 
 ## 1. Preliminaries
 ### Identifier
@@ -118,8 +117,8 @@ scanf("%d %d %d", &day, &month, &year) \\the input should be feeded as '28 7 201
 scanf("%d-%d-%d"), %day, %month, &year) \\the input should be feedes as '28-7-2017'
 ```
 
->Practice
->```c
+## 3. Practice
+```c
 #include <stdio.h>
 #include<stdlib.h>
 
@@ -135,5 +134,4 @@ int main()
      return 0;  
 }
 ```
-
 
