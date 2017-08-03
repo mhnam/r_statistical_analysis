@@ -4,7 +4,7 @@
 1. [Logical Data and Operator](#1-logical-data-and-operator)
 2. [Two-Way Selection](#2-two-way-selection)
 3. [Multiple Selection](#3-multiple-selection)
-4. [Practice](#6-practice)
+4. [Practice](#4-practice)
 
 ## 1. Logical Data and Operator
 ### Logical Data
