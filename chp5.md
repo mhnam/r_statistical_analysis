@@ -206,14 +206,20 @@ int main(){
 
 The grammar as is follows:
 ```c
-switch(expression){ //expression is the variable that make
-  case CONSTANT 1: STATEMENT 1; break; //"break" statement is not mandatory thing but if there is 
+switch(expression){
+  case CONSTANT 1: STATEMENT 1; break;
   case CONSTANT 2: STATEMENT 2; break;
   case CONSTANT 3: STATEMENT 3; break;
   ...
   default: STATEMENT n; //not compulsary but all case must be classified above 
 }
 ```
+
+
+_c.f._
+1) _expression_ is the variable that referred to classified into each case.
+2) _break_ statement is not mandatory but if there is not, then the statement would keep continue even the program should be ended. However you can use this property to determine the starting point of the program and keep the program to work on.
+3) Can not use relation expression (_e.g._ >, <, >=, <=, ==, !=)
 
 
 _e.g._
@@ -254,7 +260,57 @@ char score_to_grade(int score){
 ```
 
 ### else if
+**else if** is simillar to if-else statement but you can assign various if statement at the same time.
+
+The grammar as is follows:
+```c
+if(conditional expression 1)
+  TRUE ACTION 1;
+else if(conditional expression 2)
+  TRUE ACTION 2;
+else if(conditional expression 3)
+  TRUE ACTION 3;
+...
+else
+  FALSE ACTION;
+```
+
+
+_i.e._
+1) The second _else if(conditional expression 2)_ would judge if the first _if(conditional expression 1)_ is FALSE.
+2) By the same token, the last _else_ would be practiced if all the above conditional expressions are FALSE.
+
+_e.g._
+```c
+#include <stdio.h>
+
+int main(){
+  int score;
+  char grade;
+  
+  printf("Enter the test score(0-100):");
+  scanf("%d", &score);
+  
+  if(score>=90)
+    grade='A';
+  else if(score>=80)
+    grade='B';
+  else if(score>=70)
+    grade='C';
+  else if(score>=60)
+    grade='D';
+  else
+    grade='F';
+    
+  printf("The grade is: %c\n", grade);
+  
+  return 0;
+}
+```
+
+### switch vs. else if
+1) All the _switch_ logic can be re-written as _else if_ logic, but _switch_ logic is much simplier than _else if_ logic if there are many cases.
+2) relation expression can not be used in _switch_ logic, so only _else if_ logic can be used.
 
 ## 4. Practice
-
----NOT COMPLETED BELOW THIS LINE---
+This section is yet to be completed.
