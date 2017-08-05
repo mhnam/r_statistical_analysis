@@ -123,7 +123,7 @@ int main(){
 ### For vs. While Loop
 Every _for loop_ can be changed into _while loop_, and viceversa
 
-_e.g._For Loop
+_e.g._ For Loop
 ```c
 #include <stdio.h>
 
