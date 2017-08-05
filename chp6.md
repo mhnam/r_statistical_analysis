@@ -36,179 +36,192 @@ controlled by counting the number of loop occurance, we need to update some vari
 the loop occured.
 
 ## 2. While Loop
-**while loop** is used when each case can be classified into some integer numbers.
+**while loop** is loop that repeats until condition holds.
+
 
 The grammar as is follows:
 ```c
-switch(expression){
-  case CONSTANT 1: STATEMENT 1; break;
-  case CONSTANT 2: STATEMENT 2; break;
-  case CONSTANT 3: STATEMENT 3; break;
-  ...
-  default: STATEMENT n; //not compulsary but all case must be classified above 
+while(conditional expression){
+  STATEMENTS;
 }
 ```
-
-
-_c.f._
-1) _expression_ is the variable that referred to classified into each case.
-2) _break_ statement is not mandatory but if there is not, then the statement would keep continue even the program should be ended. However you can use this property to determine the starting point of the program and keep the program to work on.
-3) Can not use relation expression (_e.g._ >, <, >=, <=, ==, !=)
 
 
 _e.g._
 ```c
 #include <stdio.h>
 
-char score_to_grade(int score);
-
 int main(){
-  int score;
-  char grade;
+  int height=0;
+  int days=0;
+  int depth;
   
-  printf("Enter the test score(0-100):");
-  scanf("%d", &score);
+  printf("Inputthe depth of well(cm): ");
+  scanf("%d", &depth);
   
-  grade=score_to_grade(score);
-  printf("The grade is: %c\n", grade);
-  
-  return 0;
-}
-
-char score_to_grade(int score){
-  char grade;
-  int temp;
-  
-  temp=score/10;
-  switch(temp){
-    case 10:
-    case 9: grade='A'; break;
-    case 8: grade='B'; break;
-    case 7: grade='C'; break;
-    case 6: grade='D'; break;
-    default: grade='F'; //if the case does not belong to anyother above, than the default value is 'F'
+  while(height<depth){
+    height=height+50;
+    days=days+1;
   }
   
-  return grade;
+  printf("Total days: %d\n", days);
+  
+  return 0;
 }
 ```
 
 
 ## 3. For Loop
-**switch** statement is used when each case can be classified into some integer numbers.
+**for loop** is loop that repeats until counter reach a certain value.
 
 The grammar as is follows:
 ```c
-switch(expression){
-  case CONSTANT 1: STATEMENT 1; break;
-  case CONSTANT 2: STATEMENT 2; break;
-  case CONSTANT 3: STATEMENT 3; break;
-  ...
-  default: STATEMENT n; //not compulsary but all case must be classified above 
+for(initializaiton; limit-test expression; updating expression){
+  STATEMENTS;
+}
+
+```
+
+For loop can be used inside the loop as follows:
+```c
+#include <stdio.h>
+
+int main(){
+  int i, j;
+
+  for (i=2; i<3; i++){
+    for(k=1; j<10; j++)
+      printf("%d * %d = %d\n, i, j, i*j);
+  }
+  
+  return 0;
 }
 ```
 
-
 _c.f._
-1) _expression_ is the variable that referred to classified into each case.
-2) _break_ statement is not mandatory but if there is not, then the statement would keep continue even the program should be ended. However you can use this property to determine the starting point of the program and keep the program to work on.
-3) Can not use relation expression (_e.g._ >, <, >=, <=, ==, !=)
-
+1) some part of expression in paranthesis can be skipped at least the number of semi colon.
+2) {} can be skipped if there is only one statement.
+3) For loop can be used inside the loop
 
 _e.g._
 ```c
 #include <stdio.h>
 
-char score_to_grade(int score);
-
 int main(){
-  int score;
-  char grade;
+  int i;
+  int sum=0; //initialization
   
-  printf("Enter the test score(0-100):");
-  scanf("%d", &score);
-  
-  grade=score_to_grade(score);
-  printf("The grade is: %c\n", grade);
+  for(i=0; i<=10; i++)
+    sum+=i;
+    
+  printf("sum= %d\n", sum);
   
   return 0;
 }
+```
 
-char score_to_grade(int score){
-  char grade;
-  int temp;
+### For vs. While Loop
+Every _for loop_ can be changed into _while loop_, and viceversa
+
+_e.g._For Loop
+```c
+#include <stdio.h>
+
+int main(){
+  int i=1, sum=0;
   
-  temp=score/10;
-  switch(temp){
-    case 10:
-    case 9: grade='A'; break;
-    case 8: grade='B'; break;
-    case 7: grade='C'; break;
-    case 6: grade='D'; break;
-    default: grade='F'; //if the case does not belong to anyother above, than the default value is 'F'
+  for(i=1; i<20; i++){
+    scanf("%d", &a);
+    sum+=a;
   }
   
-  return grade;
+  printf("Total: %d", &sum);
+  
+  return 0;
 }
 ```
+
+_e.g._ While Loop
+```c
+#include <stdio.h>
+
+int main(){
+  int i, sum=0;
+  
+  while(i<20){
+    scanf("%d", &a);
+    sum+=a;
+    i++;
+  }
+  
+  printf("Total: %d", &sum);
+  
+  return 0;
+}
+```
+```c
 
 ## 4. Do while Loop
-**switch** statement is used when each case can be classified into some integer numbers.
+**do while loop** is loop that repeats until condition holds as while loop, but actions occur before checking the condition. (_i.e._ Post-test Loop)
 
 The grammar as is follows:
 ```c
-switch(expression){
-  case CONSTANT 1: STATEMENT 1; break;
-  case CONSTANT 2: STATEMENT 2; break;
-  case CONSTANT 3: STATEMENT 3; break;
-  ...
-  default: STATEMENT n; //not compulsary but all case must be classified above 
-}
+do{
+  STATEMENTS;
+}while(conditional expression);
+
 ```
 
-
 _c.f._
-1) _expression_ is the variable that referred to classified into each case.
-2) _break_ statement is not mandatory but if there is not, then the statement would keep continue even the program should be ended. However you can use this property to determine the starting point of the program and keep the program to work on.
-3) Can not use relation expression (_e.g._ >, <, >=, <=, ==, !=)
+1) The loop occurs at least once, even the condition does not holds.
+2) There must be a semi-colon after _while_ statement.
 
 
 _e.g._
 ```c
 #include <stdio.h>
 
-char score_to_grade(int score);
-
 int main(){
-  int score;
-  char grade;
+  int total=0;
+  int val=0;
   
-  printf("Enter the test score(0-100):");
-  scanf("%d", &score);
-  
-  grade=score_to_grade(score);
-  printf("The grade is: %c\n", grade);
+  do{
+    printf("Input number(Quit:0): "); //To give an opportunity to quit the program at the begining, we use "do-while loop"
+    scanf("%d", &val);
+    total+=val;
+  }while(val!=0);
+ 
+  printf("Total: %d\n", total);
   
   return 0;
 }
+```
 
-char score_to_grade(int score){
-  char grade;
-  int temp;
+
+### Related Statements
+* **break** is a statement which is used to quit the most inner loop.
+
+* **continue** is a statement which is used to skip the latter parts of the loop, and go to the conditional expression.
+
+
+_e.g._
+```c
+#include <stdio.h>
+
+int main(){
+  int i, sum=0;
   
-  temp=score/10;
-  switch(temp){
-    case 10:
-    case 9: grade='A'; break;
-    case 8: grade='B'; break;
-    case 7: grade='C'; break;
-    case 6: grade='D'; break;
-    default: grade='F'; //if the case does not belong to anyother above, than the default value is 'F'
+  for(i=0;;i++){
+    if(i>=100) //add until the number is less than 100
+      break;
+    else if(i%4==0) //do not add multiples of 4
+      continue;
+    sum+=i; //if the condition does not holds, add to "sum"
   }
-  
-  return grade;
+  printf("sum=%d\n", sum);
 }
 ```
+
 
 ## 5. Practice
 This section is yet to be completed.
