@@ -158,13 +158,13 @@ else
   FALSE ACTION 2;
 ```
 
-Then FALSE ACTION 2 happens if the conditional expression 1 is _TRUE_ and conditional expression 2 is _FALSE_ rather just conditional expression 1 is _FALSE_
+Then FALSE ACTION 2 happens if the conditional expression 1 is _TRUE_ and conditional expression 2 is _FALSE_ rather just conditional expression 1 is _FALSE_ as intended.
 
 
 For this case (_i.e._ when just conditional expression 1 is _FALSE_), nothing happens, because computer recognize the final else statement is _NULL_.
 
 
-This happens because computer recognize the if-else as a pair with the nearest one unless using {}:
+This happens because computer recognize the if-else as a pair with the nearest one unless using {}. Hence we can solve the problem as follows:
 ```c
 if (conditional expression 1)
   {if (conditional expression 2)
@@ -199,12 +199,62 @@ int main(){
 }
 ```
 
----NOT COMPLETED BELOW THIS LINE---
 
 ## 3. Multiple Selection
 ### switch
+**switch** statement is used when each case can be classified into some integer numbers.
 
+The grammar as is follows:
+```c
+switch(expression){ //expression is the variable that make
+  case CONSTANT 1: STATEMENT 1; break; //"break" statement is not mandatory thing but if there is 
+  case CONSTANT 2: STATEMENT 2; break;
+  case CONSTANT 3: STATEMENT 3; break;
+  ...
+  default: STATEMENT n; //not compulsary but all case must be classified above 
+}
+```
+
+
+_e.g._
+```c
+#include <stdio.h>
+
+char score_to_grade(int score);
+
+int main(){
+  int score;
+  char grade;
+  
+  printf("Enter the test score(0-100):");
+  scanf("%d", &score);
+  
+  grade=score_to_grade(score);
+  printf("The grade is: %c\n", grade);
+  
+  return 0;
+}
+
+char score_to_grade(int score){
+  char grade;
+  int temp;
+  
+  temp=score/10;
+  switch(temp){
+    case 10:
+    case 9: grade='A'; break;
+    case 8: grade='B'; break;
+    case 7: grade='C'; break;
+    case 6: grade='D'; break;
+    default: grade='F'; //if the case does not belong to anyother above, than the default value is 'F'
+  }
+  
+  return grade;
+}
+```
 
 ### else if
 
 ## 4. Practice
+
+---NOT COMPLETED BELOW THIS LINE---
