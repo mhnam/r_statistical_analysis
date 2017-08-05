@@ -8,7 +8,10 @@ Reference: Behrouz A. Forouzan and Richard F. Gilberg, A Structured Programming 
 * [CHP 3. Structure of a Program](https://github.com/mhnam/c_programming/blob/master/chp3.md)
 * [CHP 4. Functions](https://github.com/mhnam/c_programming/blob/master/chp4.md)
 * [CHP 5. Selection-Making Decisions](https://github.com/mhnam/c_programming/blob/master/chp5.md)
-* [CHP 6. Repetition](https://github.com/mhnam/c_programming/blob/master)
+* [CHP 6. Repetition](https://github.com/mhnam/c_programming/blob/master/chp6.md)
+
+--------------------------[CHAPTERS BELOW ARE YET TO BE COMPLETED]--------------------------
+
 * [CHP 7. Text Input and Output](https://github.com/mhnam/c_programming/blob/master)
 * [CHP 8. Array](https://github.com/mhnam/c_programming/blob/master)
 * [CHP 9. Pointers](https://github.com/mhnam/c_programming/blob/master)
