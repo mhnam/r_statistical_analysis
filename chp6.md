@@ -2,9 +2,9 @@
 
 ## Contents
 1. [Loop?](#1-loop)
-2-1. [While Loop](#2-while-loop)
-2-2. [For Loop](#3-for-loop)
-2-3. [Do while Loop](#4-do-while-loop)
+2. [While Loop](#2-while-loop)
+3. [For Loop](#3-for-loop)
+4. [Do while Loop](#4-do-while-loop)
 3. [Practice](#5-practice)
 
 ## 1. Loop?
@@ -34,7 +34,7 @@ To prevent infinite loop, we need to control the loop occurance with some method
 controlled by counting the number of loop occurance, we need to update some variable - so called counter - each time whenever
 the loop occured.
 
-## 2-1. While Loop
+## 2. While Loop
 **while loop** is loop that repeats until condition holds.
 
 
@@ -70,7 +70,7 @@ int main(){
 ```
 
 
-## 2-2. For Loop
+## 3. For Loop
 **for loop** is loop that repeats until counter reach a certain value.
 
 The grammar as is follows:
@@ -159,7 +159,7 @@ int main(){
 }
 ```c
 
-## 2-3. Do while Loop
+## 4. Do while Loop
 **do while loop** is loop that repeats until condition holds as while loop, but actions occur before checking the condition. (_i.e._ Post-test Loop)
 
 The grammar as is follows:
