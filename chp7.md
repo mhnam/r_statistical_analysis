@@ -1,77 +1,128 @@
 # Chapter 7 File IO
 
 ## Contents
-1. [What is Loop?](#1-what-is-loop)
-2. [While Loop](#2-while-loop)
-3. [For Loop](#3-for-loop)
-4. [Do while Loop](#4-do-while-loop)
-5. [Practice](#5-practice)
+1. [Preliminaries](#1-preliminaries)
+2. [Open and Close](#2-open-and-close)
+3. [Functions](#3-functions)
+4. [Practice](#4-practice)
 
-## 1. What is Loop?
-### Loop
-**Loop** is a logic that helps to repeat til the condition holds.
+## 1. Preliminaries
+### Files
+**File** is a unit of external data such as internal hard disk, keyboard, monitor, disk file and paper file.
 
-### Classifications
-#### Pretest vs. Post-test Loops
-* **Pretest Loop** is a loop that check the condition first before practicing the loop. Hence, if the condition does not hold at
-the first, then the loop never occurs.
+### Streams
+Data is given and written by **Stream** while all its source and destination is **File**.
 
+#### Classification of Streams
+* **Text Stream** is consist of continuous characters and line is seperated by "\n"
 
-* **Post-test Loop** is a loop that check the condition after practicing the loop. Hence, even the condition does not hold at
-the first, the loop occurs at least once.
+* **Binary Stream** is consist of continuous integer and real numbers. Since it does not need to be converted as Text Stream, its speed is much faster.
 
-#### Event vs. Count controlled Loops
-* **Event controlled Loop** is a loop whose condition is depend on whether some event is happened or not.
+#### Handling Stream and File
+1) Create a Stream
 
+This stage is declaring a stream name (_i.e._ spData in this caes) what we are going to use whenever we need to access the file. 
 
-* **Count controlled Loop** is a loop whose condition is depend on whether the number of loop occurance is greater or less than some number.
-
-### Preliminaries
-#### Initialization
-Since the loop is a logic that repeats the same actions, the value in the variable may mixed up. Hence, we need to initialize the variable to some value (_e.g._ 0 or 1) to clean the variable.
-
-#### Updating
-To prevent infinite loop, we need to control the loop occurance with some methods - event or count control. If the loop is
-controlled by counting the number of loop occurance, we need to update some variable - so called counter - each time whenever
-the loop occured.
-
-## 2. While Loop
-**while loop** is loop that repeats until condition holds.
-
-
-The grammar as is follows:
 ```c
-while(conditional expression){
-  STATEMENTS;
-}
+FILE* spData; //FILE is a structure type to read and write on file, and *(asterisk) represent that spData is a pointer type which has a address of stream.
 ```
 
+2) Open a File
+
+By using ```c fopen() ``` function, we can open the file we are using
+
+```c
+FILE* fopen(const char* filename, const char* mode); //fopen is a function to open a file, whose inputs are file name and opening mode.
+```
+
+3) Use the Stream name
+
+We can use pointer ```c *spData ``` to access the file using all functions
+
+4) Close the Stream
+
+By using ```c fclose() ``` function, we can break the connection between the file and the stream.
+
+```c
+fclose(FILE* stream)
+```
+
+#### System-Created Streams
+C provides **System-Created Streams** to communicate with turminal (_i.e._ Keyboard or monitor). Hence, we do not need to close (_c.f._ Operating System will do it for you)
+
+_e.g._
+```c
+//<stdio.h> has following streams:
+
+stdin(standard input)
+stdout(standard output)
+stderr(standard error)
+```
+
+## 2. Open and Close
+### File Opening
+```c
+fopen("filename", "mode");
+```
+
+_c.f._
+1) **filename** is a string that consit of file name and file location.
+2) **mode** is a string information that determines the usage of the file.
+    * read mode: Open existing file for reading, while file marker would be positioned at the begining of the file
+    * writing mode: Open new file for writing, even there are something in the file, file marker would position at the begining of file
+    * append mode: Open existing file for writing or create new file if there is no file exists. The file marker would position at the end of the file.
+
+_i.e._
+```c
+fpTempData=fopen("TEMPS.DAT", "w"); //open "TEMPS.DAT" in the working directory in 'writing' mode
+fpTempData=fopen("A:\\TEMPS.DAT", "w"); //open "TEMPS.DAT" in a A drive in 'writing' mode
+```
 
 _e.g._
 ```c
 #include <stdio.h>
+...
+{
+int main()
+  FILE* spData;
+  ...
+  //spData would point (inform the address of) the opened file "MYDATA.DAT" with 'writing' mode
+  spData=fopen("MYDATA.DAT", "w"); 
+  ...
+}//main
 
-int main(){
-  int height=0;
-  int days=0;
-  int depth;
-  
-  printf("Inputthe depth of well(cm): ");
-  scanf("%d", &depth);
-  
-  while(height<depth){
-    height=height+50;
-    days=days+1;
-  }
-  
-  printf("Total days: %d\n", days);
-  
-  return 0;
-}
+### File Closing
+```c
+fopen("filename", "mode");
 ```
 
+_c.f._
+1) **filename** is a string that consit of file name and file location.
+2) **mode** is a string information that determines the usage of the file.
 
-## 3. For Loop
+_i.e._
+```c
+fpTempData=fopen("TEMPS.DAT", "w"); //open "TEMPS.DAT" in the working directory in 'writing' mode
+fpTempData=fopen("A:\\TEMPS.DAT", "w"); //open "TEMPS.DAT" in a A drive in 'writing' mode
+```
+
+_e.g._
+```c
+#include <stdio.h>
+...
+{
+int main()
+  FILE* spData;
+  ...
+  //spData would point (inform the address of) the opened file "MYDATA.DAT" with 'writing' mode
+  spData=fopen("MYDATA.DAT", "w"); 
+  ...
+}//main
+
+```
+
+## 3. Functions
+###
 **for loop** is loop that repeats until counter reach a certain value.
 
 The grammar as is follows:
