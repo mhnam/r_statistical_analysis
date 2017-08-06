@@ -1,14 +1,13 @@
 # Chapter 6 Repetition
 
 ## Contents
-1. [What is Loop?](#1-what-is-loop)
+1. [Loop?](#1-loop)
 2. [While Loop](#2-while-loop)
 3. [For Loop](#3-for-loop)
 4. [Do while Loop](#4-do-while-loop)
 5. [Practice](#5-practice)
 
-## 1. What is Loop?
-### Loop
+## 1. Loop?
 **Loop** is a logic that helps to repeat til the condition holds.
 
 ### Classifications
