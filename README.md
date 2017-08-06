@@ -9,10 +9,10 @@ Reference: Behrouz A. Forouzan and Richard F. Gilberg, A Structured Programming 
 * [CHP 4. Functions](https://github.com/mhnam/c_programming/blob/master/chp4.md)
 * [CHP 5. Selection-Making Decisions](https://github.com/mhnam/c_programming/blob/master/chp5.md)
 * [CHP 6. Repetition](https://github.com/mhnam/c_programming/blob/master/chp6.md)
+* [CHP 7. Text Input and Output](https://github.com/mhnam/c_programming/blob/master/chp7.md)
 
---------------------------[CHAPTERS BELOW ARE YET TO BE COMPLETED]--------------------------
+--------------------------[CHAPTERS BELOW ARE YET TO BE COMPLETE]--------------------------
 
-* [CHP 7. Text Input and Output](https://github.com/mhnam/c_programming/blob/master)
 * [CHP 8. Array](https://github.com/mhnam/c_programming/blob/master)
 * [CHP 9. Pointers](https://github.com/mhnam/c_programming/blob/master)
 * [CHP 10. Pointers Applications](https://github.com/mhnam/c_programming/blob/master)
