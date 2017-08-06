@@ -5,7 +5,7 @@
 2. [While Loop](#2-while-loop)
 3. [For Loop](#3-for-loop)
 4. [Do while Loop](#4-do-while-loop)
-3. [Practice](#5-practice)
+5. [Practice](#5-practice)
 
 ## 1. Loop?
 **Loop** is a logic that helps to repeat til the condition holds.
