@@ -37,11 +37,11 @@ FILE* fopen(const char* filename, const char* mode); //fopen is a function to op
 
 3) Use the Stream name
 
-We can use pointer ```c *spData ``` to access the file using all functions
+We can use pointer ```*spData``` to access the file using all functions
 
 4) Close the Stream
 
-By using ```c fclose() ``` function, we can break the connection between the file and the stream.
+By using ```fclose()``` function, we can break the connection between the file and the stream.
 
 ```c
 fclose(FILE* stream)
@@ -68,9 +68,9 @@ fopen("filename", "mode");
 _c.f._
 1) **filename** is a string that consit of file name and file location.
 2) **mode** is a string information that determines the usage of the file.
-    * read mode: Open existing file for reading, while file marker would be positioned at the begining of the file
-    * writing mode: Open new file for writing, even there are something in the file, file marker would position at the begining of file
-    * append mode: Open existing file for writing or create new file if there is no file exists. The file marker would position at the end of the file.
+    * read mode (r): Open existing file for reading, while file marker would be positioned at the begining of the file
+    * writing mode (w): Open new file for writing, even there are something in the file, file marker would position at the begining of file
+    * append mode (a): Open existing file for writing or create new file if there is no file exists. The file marker would position at the end of the file.
 
 _i.e._
 ```c
@@ -90,20 +90,16 @@ int main()
   spData=fopen("MYDATA.DAT", "w"); 
   ...
 }//main
+```
 
 ### File Closing
 ```c
-fopen("filename", "mode");
+fclose(FILE* stream);
 ```
-
-_c.f._
-1) **filename** is a string that consit of file name and file location.
-2) **mode** is a string information that determines the usage of the file.
 
 _i.e._
 ```c
-fpTempData=fopen("TEMPS.DAT", "w"); //open "TEMPS.DAT" in the working directory in 'writing' mode
-fpTempData=fopen("A:\\TEMPS.DAT", "w"); //open "TEMPS.DAT" in a A drive in 'writing' mode
+res=fclose(fpTempData); //sever the connection between fpTempData with "TEMPS.DAT"
 ```
 
 _e.g._
@@ -113,13 +109,37 @@ _e.g._
 {
 int main()
   FILE* spData;
+  int res
   ...
-  //spData would point (inform the address of) the opened file "MYDATA.DAT" with 'writing' mode
   spData=fopen("MYDATA.DAT", "w"); 
   ...
+  //Give the result to variabe 'res' whether the file is properly closed. (i.e. 0 for success)
+  res=fclose(spData);
+  if(res!=0){
+   printf("The file does not closed\n");
+   return 1;
+  }
 }//main
 
 ```
+
+### Error on File Opening and Closing
+#### Opening
+Opening fails:
+
+1) When there is no identical filename
+
+2) When there is no disk storage for create new file
+
+_c.f._ The ```FILE* stream``` would have NULL if the opening procedure failed
+
+#### Closing
+If closing fails, fclose function would give EOF(_i.e._ 1) to the variable.
+
+_c.f._ Use if logic to inform user whether the file is properly closed.
+
+_e.g._
+
 
 ## 3. Functions
 ###
