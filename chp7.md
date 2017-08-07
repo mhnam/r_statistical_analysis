@@ -125,11 +125,11 @@ int main()
 
 ### Error on File Opening and Closing
 #### Opening
-Opening fails:
+Opening fails when there is:
 
-1) When there is no identical filename
+1) no identical filename in your storage.
 
-2) When there is no disk storage for create new file
+2) no disk storage available to create new file.
 
 _c.f._ The ```FILE* stream``` would have NULL if the opening procedure failed
 
@@ -139,14 +139,73 @@ If closing fails, fclose function would give EOF(_i.e._ 1) to the variable.
 _c.f._ Use if logic to inform user whether the file is properly closed.
 
 _e.g._
+```C
+#include <stdio.h>
 
+int main(){
+   int state;
+   FILE* file=fopen("Test.txt", "w");
+   
+   if(file==NULL({
+      printf("file open error!\n");
+      return 1;
+   }
+   
+   state=fclose(file);
+   
+   if(state!=0){
+      printf("file close error!\n");
+      return 1;
+   }
+   
+   return 0;
+}
+```
 
 ## 3. Functions
 ### fscanf()
+**fscanf** is a function used when we get input from the file.
+
+```c
+fscanf(FILE* stream, "format string", address list)
+```
+
+_e.g._
+```c
+n=fscanf(fp, "%d %d", &a, &b);
+```
+
+_c.f._
+1) If we input ```1234 752 a``` as input, then n would have 2 as a return value.
+2) If we feed ```1234 f a``` as input, then n would have 1 as a return value.
+3) If we input ```<EOF>``` as input, then n would have EOF(==0) as a return value.
 
 ### fprintf()
+**fprintf** is a function used when we give an output to the file.
+
+```c
+fprintf(FILE* stream, "format string", value list)
+```
+
+_e.g._
+```c
+n=fscanf(fp, "...%d...%x...", a, b);
+```
+
+_i.e._
+1) ```fprintf(spReport, "\nWelcome to calculator.\n");```
+2) ```fprintf(spReport, "\nThe answer is %6.2f\n", x);```
 
 ### Others
+
+Usage  | Keyboard/Monitor | File
+----- | ---------------- | ----
+output char | ```int putchar(int c)``` | ```int fput(int c, FILE* stream)```
+input char | ```int getchar(void)``` | ```int fget(FILE* stream)```
+output string | ```int puts(const char* s)``` | ```int fputs(const char* s, FILE* stream)```
+input string | ```char* gets(int c)``` | ```char* fgets(char* s, int n, FILE* stream)```
+output formatted | ```int printf(const* format, ...)``` | ```int fprintf(FILE* stream, const char* format, ...)```
+input formatted | ```int scanf(const char* format, ...)``` | ```int fscanf(FILE* stream, const char* format, ...)```
 
 ## 4. Practice
 This section is yet to be completed.
