@@ -24,7 +24,7 @@ Data is given and written by **Stream** while all its source and destination is 
 This stage is declaring a stream name (_i.e._ spData in this caes) what we are going to use whenever we need to access the file. 
 
 ```c
-FILE* spData; //FILE is a structure type to read and write on file, and *(asterisk) represent that spData is a pointer type which has a address of stream.
+FILE *spData; //FILE is a structure type to read and write on file, and *(asterisk) represent that spData is a pointer type which has a address of stream.
 ```
 
 2) Open a File
@@ -32,7 +32,7 @@ FILE* spData; //FILE is a structure type to read and write on file, and *(asteri
 By using ```c fopen() ``` function, we can open the file we are using
 
 ```c
-FILE* fopen(const char* filename, const char* mode); //fopen is a function to open a file, whose inputs are file name and opening mode.
+FILE *fopen(const char *filename, const char *mode); //fopen is a function to open a file, whose inputs are file name and opening mode.
 ```
 
 3) Use the Stream name
@@ -44,7 +44,7 @@ We can use pointer ```*spData``` to access the file using all functions
 By using ```fclose()``` function, we can break the connection between the file and the stream.
 
 ```c
-fclose(FILE* stream)
+fclose(FILE *stream);
 ```
 
 #### System-Created Streams
@@ -84,7 +84,7 @@ _e.g._
 ...
 {
 int main()
-  FILE* spData;
+  FILE *spData;
   ...
   //spData would point (inform the address of) the opened file "MYDATA.DAT" with 'writing' mode
   spData=fopen("MYDATA.DAT", "w"); 
@@ -94,7 +94,7 @@ int main()
 
 ### File Closing
 ```c
-fclose(FILE* stream);
+fclose(FILE *stream);
 ```
 
 _i.e._
@@ -108,7 +108,7 @@ _e.g._
 ...
 {
 int main()
-  FILE* spData;
+  FILE *spData;
   int res
   ...
   spData=fopen("MYDATA.DAT", "w"); 
@@ -131,7 +131,7 @@ Opening fails when there is:
 
 2) no disk storage available to create new file.
 
-_c.f._ The ```FILE* stream``` would have NULL if the opening procedure failed
+_c.f._ The ```FILE *stream``` would have NULL if the opening procedure failed
 
 #### Closing
 If closing fails, fclose function would give EOF(_i.e._ 1) to the variable.
@@ -144,7 +144,7 @@ _e.g._
 
 int main(){
    int state;
-   FILE* file=fopen("Test.txt", "w");
+   FILE *file=fopen("Test.txt", "w");
    
    if(file==NULL({
       printf("file open error!\n");
@@ -167,7 +167,7 @@ int main(){
 **fscanf** is a function used when we get input from the file.
 
 ```c
-fscanf(FILE* stream, "format string", address list)
+fscanf(FILE *stream, "format string", address list);
 ```
 
 _e.g._
@@ -184,7 +184,7 @@ _c.f._
 **fprintf** is a function used when we give an output to the file.
 
 ```c
-fprintf(FILE* stream, "format string", value list)
+fprintf(FILE *stream, "format string", value list);
 ```
 
 _e.g._
@@ -196,16 +196,86 @@ _i.e._
 1) ```fprintf(spReport, "\nWelcome to calculator.\n");```
 2) ```fprintf(spReport, "\nThe answer is %6.2f\n", x);```
 
-### Others
+### getchar()
+**getchar** is a function used when we read(feed an input) one character and return value.
+
+```c
+int getchar();
+```
+
+### fgetc()
+**fgetc** is a function used when we read one character from a file stream and return value.
+
+```c
+int fgetc(FILE *stream);
+```
+
+_e.g._
+```c
+n=fgetc(fp);
+```
+
+### putchar()
+
+*putchar** is a function used when we write(give an output) one character and return value.
+
+```c
+int putchar(int oneChar);
+```
+
+### fputc()
+**fputc** is a function used when we write(give an output) one character to a file stream and return value.
+
+```c
+int fputc(int oneChar, FILE *stream);
+```
+
+_e.g._
+```c
+n=fscanf(oneChar, fp);
+```
+
+### Summary
 
 Usage  | Keyboard/Monitor | File
 ----- | ---------------- | ----
-output char | ```int putchar(int c)``` | ```int fput(int c, FILE* stream)```
-input char | ```int getchar(void)``` | ```int fget(FILE* stream)```
-output string | ```int puts(const char* s)``` | ```int fputs(const char* s, FILE* stream)```
-input string | ```char* gets(int c)``` | ```char* fgets(char* s, int n, FILE* stream)```
-output formatted | ```int printf(const* format, ...)``` | ```int fprintf(FILE* stream, const char* format, ...)```
-input formatted | ```int scanf(const char* format, ...)``` | ```int fscanf(FILE* stream, const char* format, ...)```
+output char | ```int putchar(int c)``` | ```int fputc(int c, FILE *stream)```
+input char | ```int getchar(void)``` | ```int fgetc(FILE *stream)```
+output string | ```int puts(const char* s)``` | ```int fputs(const char* s, FILE *stream)```
+input string | ```char* gets(int c)``` | ```char* fgets(char* s, int n, FILE *stream)```
+output formatted | ```int printf(const* format, ...)``` | ```int fprintf(FILE *stream, const char *format, ...)```
+input formatted | ```int scanf(const char* format, ...)``` | ```int fscanf(FILE *stream, const char *format, ...)```
 
 ## 4. Practice
-This section is yet to be completed.
+```c
+#include <stdio.h>
+
+int main(){
+   FILE *ifp, *ofp;
+   char name[20];
+   int age;
+   double height;
+   int res;
+   
+   ifp=fopen("s.txt", "r");
+   if(ifp==NULL){
+      prinf("input file open error!\n");
+      return 1;
+   }
+   
+   ofp=fopen("b.txt", "w");
+   if(ofp==NULL){
+      prinf("output file open error!\n");
+      return 1;
+   }
+   
+   while(1){
+      res=fscanf(ifp, "%s%d%lf", name, &age, &height);
+      if(res==EOF) break;
+      fprintf(ofp, %.1lf %d %s\n", height, age, name);
+   }
+   
+   fclose(ifp);
+   fclose(ofp);
+}
+```
