@@ -4,8 +4,8 @@
 1. [Concept of Array](#1-concept-of-array)
 2. [Using Array](#2-using-array)
 3. [Inter-Function Communication](#3-inter-function-communication)
-4. [Two-Dimemsional Array](#4-two-dimensional-array)
-5. [Practice] (#5-practice)
+4. [Two-Dimemsional Array](#4-two-dimemsional-array)
+5. [Practice](#5-practice)
 
 ## 1. Concept of Array
 ### Motivation
@@ -29,9 +29,9 @@ float score[10]={4.3, 4.0, ..., 3.3, 3.0};
 
 _c.f._
 1) ```cint A[10]``` has 10 integer variables with A[0] to A[9]
-2) String is a array of characters with null character (_i.e._\0) at the end.
+2) String is a array of characters with null character (_i.e._ \0) at the end.
 3) Array can be compose with many dimension. _i.e._ ```cA[3][3][3]``` has 3*3*3 number of variables in array A.
-4) Address of array is assigned with the first memory of first component (_i.e._A[0]), and address of following
+4) Address of array is assigned with the first memory of first component (_i.e._ A[0]), and address of following
 components are continuous.
 
 ### Classification
@@ -165,77 +165,6 @@ int main(){
 ```
 
 ## 3. Inter-Function Communication
-### fscanf()
-**fscanf** is a function used when we get input from the file.
-
-```c
-fscanf(FILE *stream, "format string", address list);
-```
-
-_e.g._
-```c
-n=fscanf(fp, "%d %d", &a, &b);
-```
-
-_c.f._
-1) If we input ```1234 752 a``` as input, then n would have 2 as a return value.
-2) If we feed ```1234 f a``` as input, then n would have 1 as a return value.
-3) If we input ```<EOF>``` as input, then n would have EOF(==0) as a return value.
-
-### fprintf()
-**fprintf** is a function used when we give an output to the file.
-
-```c
-fprintf(FILE *stream, "format string", value list);
-```
-
-_e.g._
-```c
-n=fscanf(fp, "...%d...%x...", a, b);
-```
-
-_i.e._
-1) ```fprintf(spReport, "\nWelcome to calculator.\n");```
-2) ```fprintf(spReport, "\nThe answer is %6.2f\n", x);```
-
-### getchar()
-**getchar** is a function used when we read(feed an input) one character and return value.
-
-```c
-int getchar();
-```
-
-### fgetc()
-**fgetc** is a function used when we read one character from a file stream and return value.
-
-```c
-int fgetc(FILE *stream);
-```
-
-_e.g._
-```c
-n=fgetc(fp);
-```
-
-### putchar()
-
-*putchar** is a function used when we write(give an output) one character and return value.
-
-```c
-int putchar(int oneChar);
-```
-
-### fputc()
-**fputc** is a function used when we write(give an output) one character to a file stream and return value.
-
-```c
-int fputc(int oneChar, FILE *stream);
-```
-
-_e.g._
-```c
-n=fscanf(oneChar, fp);
-```
 
 
 ## 4. Two-Dimemsional Array
