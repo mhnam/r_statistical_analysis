@@ -4,7 +4,7 @@
 1. [Concept of Array](#1-concept-of-array)
 2. [Using Array](#2-using-array)
 3. [Inter-Function Communication](#3-inter-function-communication)
-4. [Two-Dimemsional Array](#4-two-dimemsional-array)
+4. [Two-Dimensional Array](#4-two-dimensional-array)
 5. [Practice](#5-practice)
 
 ## 1. Concept of Array
@@ -276,7 +276,7 @@ void fun(int fAry[]){
 #### Variable-size Array
 ```c
 #include <stdio.h>
-void fun(fAry[int fAry[*});
+void fun(fAry[int fAry[*]);
 
 int main(){
    int ary[10];
@@ -291,14 +291,185 @@ void fun(fAry[int fAry[*}]){
 }
 ```
 
-## 4. Two-Dimemsional Array
+## 4. Two-Dimensional Array
+### Concept
+**Two-Dimensional Array** is a array that compose of row and column.
 
-
-## 5. Practice
 ```c
 #include <stdio.h>
 
 int main(){
-
+   //declare
+   int a[4][3];
+   int i, j;
+   
+   //initialization
+   for(i=0; i<4; ++){
+    for(j=0; j<3; j++){
+      printf("a[%d][%d]=%[d] ", i, j, a[i][j]);
+    }
+    printf("\n");  
+   }
+   
+   return 0;
 }
 ```
+
+_c.f._
+1) There is only one-dimensional array in c-programming. Two-dimensional array is a one-dimensional array whose components are  one-dimensional arrays.
+
+### Declare
+```c
+type-specifier array-name[row][column];
+```
+
+### Initialization
+```c
+//Assign by row
+int a[4][3]={{1, 2, 3}{4, 5, 6}{7, 8, 9}{10, 11, 12}};
+
+//Assign by each component
+int i, j, k;
+int a[4][3];
+
+for(i=1; i<=12; i++){
+  for(j=1; j<=4; j++){
+    for(k=1; k<=3; k++){
+      a[j][k]=i;
+    }
+  }
+}
+```
+
+### Inter-Function Communication
+As one-dimensional array, there are several ways to communicate between functions - 1) Passing Individual Elements, 2) Passing Address and 3) Passing a Row or Whole Array
+
+#### Passing Individual Elements
+**Passing Individual Elements** is a method which pass a value of a elements to a function,
+but this value cannot be changed. (SEE [chp4. function](https://github.com/mhnam/c_programming/blob/master/chp4.md#how-to-use) for detail)
+
+```c
+#include <stdio.h>
+void print_square(int x);
+
+int main(){
+   int a[4][3]={{1, 2, 3}{4, 5, 6}{7, 8, 9}{10, 11, 12}};
+   int i, j;
+   
+   for(i=0; i<4; i++){
+    for(j=0; j<3; j++){
+        print_square(a[i][j]);
+    }
+    printf("\n");  
+   }
+   
+   return 0;
+}
+
+void print_square(int x){
+  printf("The value is %d\n", x*x);
+  
+  return;
+}
+```
+
+#### Passing Address
+**Passing Address** is a method which pass a address of a elements (or whole array) to a function,
+and this value can be changed. (SEE [chp4. function](https://github.com/mhnam/c_programming/blob/master/chp4.md#how-to-use) for detail)
+
+```c
+#include <stdio.h>
+void print_square(int *x);
+
+int main(){
+   int a[4][3]={{1, 2, 3}{4, 5, 6}{7, 8, 9}{10, 11, 12}};
+   int i, j;
+   
+   for(i=0; i<4; i++){
+    for(j=0; j<3; j++){
+        print_square(&a[i][j]);
+    }
+    printf("\n");  
+   }
+   
+   return 0;
+}
+
+void print_square(int *x){
+  printf("The value is %d\n", x*x);
+  
+  return;
+}
+```
+
+#### Passing a Row or Whole Array
+**Passing a Row or Whole Array** is a method which pass a address of a row or a array(_i.e._ address of the first element of the whole array) to a function, and this value can be changed. (SEE [chp4. function](https://github.com/mhnam/c_programming/blob/master/chp4.md#how-to-use) for detail)
+
+```c
+//Passing a Row
+
+#define MAX_ROWS 4
+#define MAX_COLS 3
+#include <stdio.h>
+void print_square(int []);
+
+int main(){
+   int a[4][3]={{1, 2, 3}{4, 5, 6}{7, 8, 9}{10, 11, 12}};
+   int i, j;
+   
+   for(i=0; i<MAX_ROWS; i++){
+    print_square(a[]);
+    printf("\n");  
+   }
+   
+   return 0;
+}
+
+void print_square(int x){
+  for(j=0; j<MAX_COLS; j++){
+    printf("%d", x[j]*x[j]);
+  }
+  printf("\n");
+  
+  return;
+}
+```
+
+
+```c
+//Passing a Whole Array
+
+#define MAX_ROWS 4
+#define MAX_COLS 3
+#include <stdio.h>
+void print_square(int [][MAX_COLS]); //must assign the last compoent of the array
+
+int main(){
+  int a[4][3]={{1, 2, 3}{4, 5, 6}{7, 8, 9}{10, 11, 12}};
+  
+  print_square(a);
+  
+  return 0;
+}
+
+void print_square(int x[][MAX_COLS]){
+  for(int i=0; i<MAX_ROWS; i++){
+    for(j=0; j<MAX_COLS; j++){
+      printf("%d", x[i][j]*x[i][j]);
+  }
+  printf("\n");
+  
+  return;
+}
+```
+
+### Multi-Dimensional Arrays
+**Multi-Dimensional Array** is n-dimensional array which have various dimension.
+
+_i.e._
+1) int table[3][5][4] is a array which has 3 pages of 5 rows, 4 columns array.
+2) It can be initialize as two-dimensional array, but needs more {} to initialize by assigning each components.
+3) 
+
+## 5. Practice
+This section is yet to be complete.
