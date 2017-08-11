@@ -165,7 +165,131 @@ int main(){
 ```
 
 ## 3. Inter-Function Communication
+### Passing Individual Elements
+**Passing Individual Elements** is a method which pass a value of a elements to a function,
+but this value cannot be changed. (SEE [chp4. function](https://github.com/mhnam/c_programming/blob/master/chp4.md#how-to-use) for detail)
 
+```c
+#include <stdio.h>
+void fun(int x);
+
+int main(){
+   int ary[10];
+   
+   fun(ary[3]);
+   
+   return 0;
+}
+
+void fun(int x){
+  process
+}
+```
+
+_c.f._
+```c
+#include <stdio.h>
+void mularray(int x);
+
+int main(){
+   int a[5]={1,2,3,4,5};
+   
+   mularray(a[4]);
+   printf("a[0]=%d, a[1]=%d, a[2]=%d, a[3]=%d, a[4]=%d\n", a[0], a[1], a[2], a[3], a[4]);
+   
+   return 0;
+}
+
+void mularray(int x){
+  int i=4;
+  x=i*i;
+  return;
+}
+```
+a[4] would not be changed to 16 as expected. We need to pass address to do so.
+
+### Passing Address
+**Passing Address** is a method which pass a address of a elements (or whole array) to a function,
+and this value can be changed. (SEE [chp4. function](https://github.com/mhnam/c_programming/blob/master/chp4.md#how-to-use) for detail)
+
+```c
+#include <stdio.h>
+void fun(int *x);
+
+int main(){
+   int ary[10];
+   
+   fun(&ary[3]);
+   
+   return 0;
+}
+
+void fun(int *x){
+  process
+}
+```
+
+_c.f._
+```c
+#include <stdio.h>
+void mularray(int *x);
+
+int main(){
+   int a[5]={1,2,3,4,5};
+   
+   mularray(&a[4]);
+   printf("a[0]=%d, a[1]=%d, a[2]=%d, a[3]=%d, a[4]=%d\n", a[0], a[1], a[2], a[3], a[4]);
+   
+   return 0;
+}
+
+void mularray(int *x){
+  int i=4;
+  *x=i*i;
+  return;
+}
+```
+a[4] would be changed to 16 as expected.
+
+
+### Passing Whole Array
+**Passing Whole Array** is a method which pass a address of a array(_i.e._ address of the first element of the whole array) to a function, and this value can be changed. (SEE [chp4. function](https://github.com/mhnam/c_programming/blob/master/chp4.md#how-to-use) for detail)
+
+#### Fixed-size Array
+```c
+#include <stdio.h>
+void fun(int fAry[]);
+
+int main(){
+   int ary[10];
+   
+   fun(ary);
+   
+   return 0;
+}
+
+void fun(int fAry[]){
+  process
+}
+```
+
+#### Variable-size Array
+```c
+#include <stdio.h>
+void fun(fAry[int fAry[*});
+
+int main(){
+   int ary[10];
+   
+   fun(ary);
+   
+   return 0;
+}
+
+void fun(fAry[int fAry[*}]){
+  process
+}
+```
 
 ## 4. Two-Dimemsional Array
 
